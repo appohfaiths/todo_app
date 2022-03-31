@@ -1,0 +1,173 @@
+html {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  /* background: rgba(248, 246, 248, 0.85); */
+  position: relative;
+}
+
+i {
+  pointer-events: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/* header */
+.header {
+  background: url(/images/bg-desktop-light.jpg) no-repeat center center / cover;
+  height: 20vh;
+  position: relative;
+}
+
+.header .title-line {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.header .title-text {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+/* todo list */
+.todoList-container {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 100%;
+}
+
+.display {
+  height: 100%;
+}
+
+.list-entry form {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 25px;
+}
+
+.entry-form #todo-entry {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.entry-form button {
+  width: 8%;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* todo items */
+.todo-items {
+  list-style: none;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.todo-items li {
+  border-top: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.todo-list-item {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+}
+
+.todo-list-item span {
+  width: 80%;
+}
+
+.todo-list-item button {
+  width: 8%;
+  border: 0;
+  background: #fff;
+}
+
+/* app.js utils */
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* dark mode  */
+.dark {
+  background: #000;
+}
+
+/* media queries */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+  }
+  .header {
+    background: url(/images/bg-desktop-dark.jpg) no-repeat center center / cover;
+  }
+
+  .list-controls,
+  .todo-display,
+  .todo-items,
+  .entry-form #todo-entry {
+    background: hsl(233, 42%, 46%);
+    color: #fff;
+  }
+
+  .light {
+    background: #fff;
+  }
+}
+
+@media (max-width: 700px) {
+  .header .title-line {
+    width: 90%;
+  }
+  .todoList-container {
+    width: 95%;
+  }
+}
