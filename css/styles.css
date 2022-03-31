@@ -170,4 +170,15 @@ button {
   .todoList-container {
     width: 95%;
   }
+  .list-controls {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list-control-item {
+    display: flex;
+    gap: 25px;
+  }
 }
